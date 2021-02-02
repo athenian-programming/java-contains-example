@@ -1,0 +1,20 @@
+.vscode
+.gradle
+.idea
+.run
+out
+build
+*.iml
+*.ipr
+*.iws
+
+### Kotlin template
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
