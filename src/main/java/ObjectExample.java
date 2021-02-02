@@ -4,12 +4,12 @@ import java.util.Set;
 public class ObjectExample {
 
     public static void main(String[] args) {
-        equality();
-        sets1();
-        sets2();
+        checkEquality();
+        checkSetContains();
+        checkSetSize();
     }
 
-    static void equality() {
+    static void checkEquality() {
         MyObj a1 = new MyObj("A");
 
         System.out.println("Equal1: " + (a1.equals(a1)));
@@ -17,30 +17,28 @@ public class ObjectExample {
         System.out.println("Equal3: " + (new MyObj("A").equals(new MyObj("A"))));
     }
 
-    static void sets1() {
-        Set<MyObj> set1 = new HashSet<>();
+    static void checkSetContains() {
+        Set<MyObj> set = new HashSet<>();
 
         MyObj a1 = new MyObj("A");
-        set1.add(a1);
-        System.out.println("Contains A: " + set1.contains(a1));
+        set.add(a1);
+        System.out.println("Contains A: " + set.contains(a1));
 
-        System.out.println("Contains C: " + set1.contains(new MyObj("C")));
+        System.out.println("Contains C: " + set.contains(new MyObj("C")));
 
-        set1.add(new MyObj("B"));
-        System.out.println("Contains B: " + set1.contains(new MyObj("B")));
+        set.add(new MyObj("B"));
+        System.out.println("Contains B: " + set.contains(new MyObj("B")));
 
         MyObj a2 = new MyObj("A");
-        System.out.println("Contains A2: " + set1.contains(a2));
+        System.out.println("Contains A2: " + set.contains(a2));
     }
 
-    static void sets2() {
-        Set<MyObj> set1 = new HashSet<>();
+    static void checkSetSize() {
+        Set<MyObj> set = new HashSet<>();
 
-        set1.add(new MyObj("A"));
-        System.out.println("Set size: " + set1.size());
-
-        set1.add(new MyObj("A"));
-        System.out.println("Set size: " + set1.size());
+        for (int i = 0; i < 5; i++)
+            set.add(new MyObj("A"));
+        System.out.println("Set size: " + set.size());
     }
 
     static class MyObj {
